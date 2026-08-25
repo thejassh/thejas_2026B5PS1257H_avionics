@@ -1,3 +1,7 @@
+#NAME: Thejas Shetty
+#ID: 2026B5PS1257H
+
+
 import csv
 import numpy as np
 import matplotlib.pyplot as plt
@@ -58,7 +62,7 @@ def plotd(data=extract(),n=5,m=2):
 		sds.append(sd)
 		mans.append(mean)
 		#test end(?)'''
-		if abs(mean-i[1])>max(m*abs(sd),5) and len(y)>=5:#alternate idea:use mean of sd's to do this thing 
+		if abs(mean-i[1])>max(m*abs(sd),5) and len(y)>=5: #alternate idea:use mean of sd's to do this thing 
 			#print(mean-y[-1],sd,'\n')
 			rejected+=1#consecutively rejected entries
 		else:
@@ -68,7 +72,7 @@ def plotd(data=extract(),n=5,m=2):
 			ax.relim()
 			ax.autoscale_view()
 			fig.canvas.draw_idle()
-			plt.pause(0.1)
+			plt.pause(1)
 			rejected=-1   #now it doesn't represent consecutively rejected but it's to let the data append ,rejected. times to update sd to prevent freezing too much
 		#print(y,end='\n')
 		#print(sds,mans,sep='hi',end='bye\n')
@@ -76,5 +80,5 @@ def plotd(data=extract(),n=5,m=2):
 	
 data=extract()
 plotd(data,5,8)
-#reasonably keep m in range of 5 to 10. 3 will give you a curve with less janky points but the jankiness at that scale might actually be true 		
+#reasonably keep m in range of 5 to 10(when n=5). 3 will give you a curve with less janky points but the jankiness at that scale might actually be true 		
 		
