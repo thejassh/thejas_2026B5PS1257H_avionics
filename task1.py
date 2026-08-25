@@ -32,7 +32,7 @@ def extract(file='Depth Data'):
 	fo.close()
 	return ddata
 def plotd(data=extract(),n=5,m=2):
-	print(data)
+	#print(data)
 	x=[]
 	y=[]
 	'''sds=[]
@@ -81,4 +81,4 @@ def plotd(data=extract(),n=5,m=2):
 data=extract()
 plotd(data,5,8)
 #reasonably keep m in range of 5 to 10(when n=5). 3 will give you a curve with less janky points but the jankiness at that scale might actually be true 		
-		
+
