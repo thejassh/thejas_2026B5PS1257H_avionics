@@ -72,7 +72,7 @@ def plotd(data=extract(),n=5,m=2):
 			ax.relim()
 			ax.autoscale_view()
 			fig.canvas.draw_idle()
-			plt.pause(0.01)
+			plt.pause(1)
 			rejected=-1   #now it doesn't represent consecutively rejected but it's to let the data append ,rejected. times to update sd to prevent freezing too much
 		#print(y,end='\n')
 		#print(sds,mans,sep='hi',end='bye\n')
