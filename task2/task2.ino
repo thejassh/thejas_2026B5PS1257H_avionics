@@ -1,4 +1,8 @@
 // C++ code
+/*
+Name:Thejas Shetty
+ID: 2026B5PS1257H
+*/
 #include<LiquidCrystal.h>
 
 int led=13;
@@ -72,7 +76,7 @@ void loop()
     if (mode!=2 && mode!=1)
     {
       //mode=0;//OPEN SEA
-      if (brightness<512)
+      if (brightness<512 && mode!=1 && mode!=2 && mode!=4)
       {
         if (mode==3 && sstarted==true)
         {
@@ -83,7 +87,7 @@ void loop()
           }
         }
         if (sstarted==false) sstrt=millis();
-        if (mode!=2 && mode!=1)
+        if (mode!=2 && mode!=1)//added this before modifying upper if, equivalent to if true
         {
         	
         	mode=3;//STORM
@@ -104,7 +108,7 @@ void loop()
       {
         mode=0;
         //pinMode(buzz, INPUT);
-        if (false) mode=4;//tried something here didnt work
+        //if (false) mode=4;//tried something else here didnt work
         digitalWrite(13, LOW);
         sstarted=false;
       }
@@ -135,7 +139,7 @@ void loop()
       pinMode(dsts, INPUT);
       unsigned long t=pulseIn(dsts,HIGH, 15000);*/
       //dst=(t)*0.0343/2.0;
-      if (dst<100 && dst!=0 && mode!=1)
+      if (dst<100 && dst!=0 && mode!=1 && mode!=3)
       {
         if (mode==4 && cstarted == true)
         {
